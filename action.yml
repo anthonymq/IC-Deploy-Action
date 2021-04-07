@@ -11,9 +11,9 @@ inputs:
   wallets:
     description: 'IC wallets for deploying the canisters'
     required: true 
-  arguments:
-    description: 'Specify arguments when deploying the canisters'
-    required: false 
+  # arguments:
+  #   description: 'Specify arguments when deploying the canisters'
+  #   required: false 
 runs:
   using: 'docker'
   image: 'Dockerfile'

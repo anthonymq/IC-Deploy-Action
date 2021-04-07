@@ -13,7 +13,11 @@ echo $INPUT_IDENTITY > ~/.config/dfx/identity/default/identity.pem
 sed -i 's/\\r\\n/\r\n/g' ~/.config/dfx/identity/default/identity.pem
 echo $INPUT_WALLETS > ~/.config/dfx/identity/default/wallets.json
 
+pwd
+ls -la
+
 echo "Deploying to the IC"
-echo $INPUT_ARGUMENTS
 dfx identity get-principal
-dfx deploy --network=ic $INPUT_ARGUMENTS
+dfx deploy --network=ic 
+
+./initData.sh
