@@ -14,6 +14,7 @@ sed -i 's/\\r\\n/\r\n/g' ~/.config/dfx/identity/default/identity.pem
 echo $INPUT_WALLETS > ~/.config/dfx/identity/default/wallets.json
 
 echo "Deploying to the IC"
-echo $INPUT_ARGUMENTS
-dfx identity get-principal
-dfx deploy --network=ic $INPUT_ARGUMENTS
+
+dfx canister --network=ic create --all
+dfx build --network=ic
+dfx canister --network=ic install --all -m reinstall
